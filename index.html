@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>传统搜索引擎</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202124;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+      padding: 18px 28px;
+      font-size: 14px;
+    }
+
+    header a,
+    footer a {
+      color: #3c4043;
+      text-decoration: none;
+    }
+
+    header a:hover,
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px 120px;
+    }
+
+    .logo {
+      margin-bottom: 28px;
+      font-size: clamp(56px, 10vw, 92px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -6px;
+      user-select: none;
+    }
+
+    .logo span:nth-child(1),
+    .logo span:nth-child(4) { color: #4285f4; }
+    .logo span:nth-child(2),
+    .logo span:nth-child(6) { color: #ea4335; }
+    .logo span:nth-child(3) { color: #fbbc05; }
+    .logo span:nth-child(5) { color: #34a853; }
+
+    .search-form {
+      width: min(92vw, 620px);
+      text-align: center;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
+    }
+
+    .search-box:focus-within {
+      border-color: transparent;
+      box-shadow: 0 1px 8px rgba(32, 33, 36, 0.2);
+    }
+
+    .search-icon {
+      color: #9aa0a6;
+      font-size: 18px;
+    }
+
+    input[type="search"] {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      font-size: 16px;
+      line-height: 44px;
+    }
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      background: #f8f9fa;
+      color: #3c4043;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 10px 18px;
+    }
+
+    button:hover {
+      border-color: #dadce0;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .language-tip {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #4d5156;
+    }
+
+    .language-tip a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .language-tip a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #f2f2f2;
+      color: #70757a;
+      font-size: 14px;
+    }
+
+    .footer-location,
+    .footer-links {
+      padding: 15px 30px;
+    }
+
+    .footer-location {
+      border-bottom: 1px solid #dadce0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links div {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="顶部导航">
+    <a href="#">邮箱</a>
+    <a href="#">图片</a>
+    <a href="#">登录</a>
+  </header>
+
+  <main>
+    <div class="logo" aria-label="Search">
+      <span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span>
+    </div>
+
+    <form class="search-form" action="#" method="get" role="search">
+      <label class="search-box" for="query">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input id="query" name="q" type="search" autocomplete="off" placeholder="在这里输入搜索内容">
+      </label>
+
+      <div class="buttons">
+        <button type="submit">搜索一下</button>
+        <button type="button">手气不错</button>
+      </div>
+    </form>
+
+    <p class="language-tip">提供：<a href="#">中文</a> · <a href="#">English</a></p>
+  </main>
+
+  <footer>
+    <div class="footer-location">中国</div>
+    <div class="footer-links">
+      <div>
+        <a href="#">关于</a>
+        <a href="#">广告</a>
+        <a href="#">商务</a>
+        <a href="#">搜索的工作原理</a>
+      </div>
+      <div>
+        <a href="#">隐私权</a>
+        <a href="#">条款</a>
+        <a href="#">设置</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
