@@ -1,0 +1,10 @@
+{
+  "dataset": "environment_monitoring_station",
+  "description": "Example rules for environmental monitoring data governance",
+  "rules": [
+    {"type": "required", "column": "station_id"},
+    {"type": "unique", "column": "record_id"},
+    {"type": "range", "column": "pm25", "min": 0, "max": 1000},
+    {"type": "range", "column": "temperature", "min": -50, "max": 60}
+  ]
+}
