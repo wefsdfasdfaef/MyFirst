@@ -1,6 +1,7 @@
 import unittest
 
 from open_data_quality.core import check_rows
+from open_data_quality.reporting import render_html
 
 
 class QualityChecksTest(unittest.TestCase):
@@ -27,6 +28,11 @@ class QualityChecksTest(unittest.TestCase):
     def test_regex(self):
         report = check_rows(self.rows, [{"type": "regex", "column": "email", "pattern": r"^[^@]+@[^@]+\.[^@]+$"}])
         self.assertEqual(report["results"][0]["failed_rows"], [2])
+
+    def test_html_report(self):
+        html = render_html({"rows": 3, "checks": 1, "passed": 1, "failed": 0, "score": 100, "results": []})
+        self.assertIn("Open Data Quality Report", html)
+        self.assertIn("100.00%", html)
 
 
 if __name__ == "__main__":
