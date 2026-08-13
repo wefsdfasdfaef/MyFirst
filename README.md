@@ -72,7 +72,7 @@ Rules are stored in a JSON object with a `rules` array:
     {"type": "required", "column": "name"},
     {"type": "unique", "column": "id"},
     {"type": "range", "column": "age", "min": 0, "max": 120},
-    {"type": "regex", "column": "email", "pattern": "^[^@]+@[^@]+\\\\.[^@]+$"}
+    {"type": "regex", "column": "email", "pattern": "^[^@]+@[^@]+\\.[^@]+$"}
   ]
 }
 ```
