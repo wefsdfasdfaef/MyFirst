@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "open-data-quality"
 version = "0.1.1"
-description = "A lightweight, configuration-driven data quality toolkit"
+description = "Auditable, configuration-driven quality gates for CSV data delivery and CI workflows."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
