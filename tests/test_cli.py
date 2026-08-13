@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from open_data_quality import __version__
 from open_data_quality.cli import build_parser, main
 
 
@@ -22,7 +23,7 @@ class CliTest(unittest.TestCase):
             with self.assertRaises(SystemExit) as result:
                 build_parser().parse_args(["--version"])
         self.assertEqual(result.exception.code, 0)
-        self.assertIn("0.1.0", output.getvalue())
+        self.assertIn(__version__, output.getvalue())
 
     def test_successful_run_writes_reports(self):
         with tempfile.TemporaryDirectory() as temporary:

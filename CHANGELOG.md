@@ -4,13 +4,13 @@ All notable user-facing changes are recorded here. The project follows semantic 
 
 ## [Unreleased]
 
-- Improve package metadata, contributor guidance, release automation, and CI packaging checks.
-- Make command-line version reporting and rule-file validation explicit.
-- Expand examples and edge-case coverage.
+Future changes will be added here.
 
-## [0.1.0] - 2026-08-13
+## [0.1.1] - 2026-08-13
 
 - Add required, unique, regex, and numeric-range checks for CSV data.
 - Add JSON and self-contained HTML reports.
 - Add command-line execution and CI-friendly exit statuses.
-- Add environmental monitoring examples, tests, Apache-2.0 licensing, and contribution guidance.
+- Add command-line version reporting and clearer validation errors for malformed rule files.
+- Improve package metadata, source archives, contributor guidance, release automation, and CI packaging checks.
+- Add environmental monitoring and passing-data examples, tests, Apache-2.0 licensing, and contribution guidance.
