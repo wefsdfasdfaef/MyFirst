@@ -1,24 +1,53 @@
 name: Bug report
-description: Report a reproducible problem
+description: Report a reproducible problem in the validator or its reports.
 title: "[Bug]: "
-labels: ["bug"]
+labels:
+  - bug
 body:
-  - type: textarea
-    id: description
+  - type: markdown
     attributes:
-      label: What happened?
-      description: Describe the observed and expected behavior.
+      value: |
+        Please remove credentials, personal data, and confidential rows before posting.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened, and what did you expect to happen?
     validations:
       required: true
   - type: textarea
-    id: reproduce
+    id: reproduction
     attributes:
-      label: Reproduction steps
-      description: Provide the smallest reproducible example you can.
+      label: Reproduction
+      description: Give the smallest command, redacted rules, and redacted input shape that reproduce the problem.
+      render: shell
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: Version
-      placeholder: 0.1.0
+      label: Package version
+      placeholder: "0.1.1 or main commit"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Runtime environment
+      placeholder: "Python version, operating system, and CI runner if relevant"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Paste the relevant error, JSON result, or HTML report excerpt after removing sensitive values.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, personal data, and confidential source rows.
+          required: true
