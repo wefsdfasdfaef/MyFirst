@@ -17,9 +17,13 @@ def load_csv(path: str | Path) -> list[dict[str, str]]:
 def load_rules(path: str | Path) -> list[dict[str, Any]]:
     with Path(path).open("r", encoding="utf-8") as handle:
         data = json.load(handle)
+    if not isinstance(data, dict):
+        raise ValueError("rules file must contain a JSON object")
     rules = data.get("rules")
     if not isinstance(rules, list):
         raise ValueError("rules file must contain a 'rules' array")
+    if any(not isinstance(rule, dict) for rule in rules):
+        raise ValueError("every item in 'rules' must be an object")
     return rules
 
 
@@ -45,6 +49,14 @@ def _regex(rows: list[dict[str, str]], column: str, pattern: str) -> list[int]:
 
 
 def _range(rows: list[dict[str, str]], column: str, minimum: float | None, maximum: float | None) -> list[int]:
+    try:
+        lower = float(minimum) if minimum is not None else None
+        upper = float(maximum) if maximum is not None else None
+    except (TypeError, ValueError) as exc:
+        raise ValueError("range rule bounds must be numeric") from exc
+    if lower is not None and upper is not None and lower > upper:
+        raise ValueError("range rule minimum cannot exceed maximum")
+
     failed: list[int] = []
     for i, row in enumerate(rows, 1):
         value = row.get(column, "")
@@ -55,9 +67,9 @@ def _range(rows: list[dict[str, str]], column: str, minimum: float | None, maxim
         except (TypeError, ValueError):
             failed.append(i)
             continue
-        if minimum is not None and number < minimum:
+        if lower is not None and number < lower:
             failed.append(i)
-        elif maximum is not None and number > maximum:
+        elif upper is not None and number > upper:
             failed.append(i)
     return failed
 

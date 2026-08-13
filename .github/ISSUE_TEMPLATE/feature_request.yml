@@ -1,0 +1,31 @@
+name: Feature request
+description: Propose a data-quality capability or maintainer improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+      description: Describe the data workflow and the failure or manual step it affects.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What behavior do you propose?
+      description: Include an example rule, command, report field, or adapter interface when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How should it be validated?
+      description: List expected results, compatibility requirements, and useful test data.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What alternatives have you considered?
+      description: Explain existing workarounds or related tools if relevant.
