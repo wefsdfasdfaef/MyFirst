@@ -28,13 +28,13 @@ The current input format is CSV. Database adapters, streaming for large files, a
 
 ## Install
 
-After the v0.1.1 release is published to PyPI, install the pinned package:
+Install the current release from PyPI:
 
 ```bash
 python -m pip install open-data-quality==0.1.1
 ```
 
-Until then, install the project from source:
+For a source checkout or unreleased changes, install the project from source:
 
 ```bash
 python -m pip install -e .
