@@ -1,0 +1,6 @@
+"""Open Data Quality public API."""
+
+from .core import check_rows, load_csv, run_quality_checks
+
+__all__ = ["check_rows", "load_csv", "run_quality_checks"]
+__version__ = "0.1.0"
