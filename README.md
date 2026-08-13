@@ -1,6 +1,6 @@
 # Open Data Quality
 
-A lightweight, configuration-driven data quality toolkit for CSV datasets. It is designed for data governance teams that need auditable, repeatable checks without deploying a heavy platform.
+A lightweight, configuration-driven data quality toolkit for CSV datasets. It provides auditable quality checks for data governance workflows.
 
 ## Features
 
@@ -8,9 +8,10 @@ A lightweight, configuration-driven data quality toolkit for CSV datasets. It is
 - Uniqueness checks
 - Regex validation
 - Numeric range validation
-- JSON quality reports with row-level issue samples
+- JSON quality reports
+- Self-contained HTML quality reports
 - Command-line interface
-- Zero runtime dependencies
+- CI-friendly execution
 
 ## Quick start
 
@@ -18,49 +19,41 @@ A lightweight, configuration-driven data quality toolkit for CSV datasets. It is
 python -m open_data_quality.cli examples/sample.csv --rules examples/rules.json
 ```
 
-Example output:
+Generate an HTML report:
 
-```json
-{
-  "rows": 5,
-  "checks": 4,
-  "passed": 3,
-  "failed": 1,
-  "score": 75.0
-}
+```bash
+python -m open_data_quality.cli examples/sample.csv --rules examples/rules.json --html-report report.html
 ```
 
-## Install for development
+## Environmental monitoring example
+
+The project includes a governance example for environmental monitoring datasets:
+
+- monitoring station identifiers
+- record uniqueness
+- PM2.5 value validation
+- temperature range validation
+
+Example rules:
+
+```bash
+examples/environment_monitoring_rules.json
+```
+
+## Why this project
+
+Open Data Quality targets practical governance scenarios where teams need transparent rules, repeatable checks, and machine-readable quality results that can integrate with larger data platforms.
+
+## Development
 
 ```bash
 python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
-## Rule format
-
-```json
-{
-  "rules": [
-    {"type": "required", "column": "name"},
-    {"type": "unique", "column": "id"},
-    {"type": "regex", "column": "email", "pattern": "^[^@]+@[^@]+\\.[^@]+$"},
-    {"type": "range", "column": "age", "min": 0, "max": 120}
-  ]
-}
-```
-
-## Why this project
-
-Many data-governance projects need a small quality gate that can run in CI, scheduled jobs, data delivery pipelines, or local audits. Open Data Quality focuses on transparent rules and machine-readable results so it can be embedded into larger governance platforms.
-
 ## Roadmap
 
 See [docs/roadmap.md](docs/roadmap.md).
-
-## Contributing
-
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
