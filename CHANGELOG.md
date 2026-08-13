@@ -14,3 +14,4 @@ Future changes will be added here.
 - Add command-line version reporting and clearer validation errors for malformed rule files.
 - Improve package metadata, source archives, contributor guidance, release automation, and CI packaging checks.
 - Add environmental monitoring and passing-data examples, tests, Apache-2.0 licensing, and contribution guidance.
+- Add a pinned-version GitHub Actions integration example for downstream quality gates.

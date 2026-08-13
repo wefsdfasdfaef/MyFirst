@@ -90,7 +90,7 @@ The repository's CI runs the test suite on Python 3.10–3.13, builds an sdist a
 
 ## Contributing and maintenance
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and pull-request expectations, [SECURITY.md](SECURITY.md) for vulnerability reports, [docs/release.md](docs/release.md) for releases, and [docs/roadmap.md](docs/roadmap.md) for planned work.
+See [docs/integrations.md](docs/integrations.md) for a downstream GitHub Actions example, [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and pull-request expectations, [SECURITY.md](SECURITY.md) for vulnerability reports, [docs/release.md](docs/release.md) for releases, and [docs/roadmap.md](docs/roadmap.md) for planned work.
 
 ## License
 
