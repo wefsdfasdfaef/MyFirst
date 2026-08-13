@@ -33,7 +33,7 @@ jobs:
       name: pypi
       url: https://pypi.org/p/open-data-quality
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: distributions
           path: dist/
