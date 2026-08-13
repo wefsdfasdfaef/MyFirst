@@ -1,19 +1,23 @@
 # Roadmap
 
-## 0.1 — Core quality checks
+The roadmap is ordered around a stable, reviewable core. Each feature should include tests, documentation, an example, and a clear compatibility note before it is considered complete.
 
-Completed: CSV input, required/unique/regex/range rules, JSON reports, CLI, tests and CI.
+## 0.1 — Core quality checks — released
 
-## 0.2 — Governance-friendly reporting
+CSV input, required/unique/regex/range rules, JSON and HTML reports, CLI execution, tests, CI, and environmental monitoring examples.
 
-Completed: HTML quality reports and environmental monitoring data governance examples.
+## 0.2 — Quality-gate usability
 
-Planned: date formats, enumerations, cross-column rules, configurable severity and richer summary metrics.
+- Publish versioned packages and document installation and upgrade behavior.
+- Add date-format, enumeration, cross-column, severity, and summary-metric rules.
+- Improve diagnostics for missing columns, malformed rules, and large inputs.
 
-## 0.3 — Data-source adapters
+## 0.3 — Data-source and scale options
 
-Planned: database adapters, large-file streaming, rule packs and scheduled execution examples.
+- Explore database adapters behind optional dependencies.
+- Add streaming behavior for large CSV files with documented memory guarantees.
+- Provide reusable rule packs and scheduled-execution examples.
 
-## 0.4 — AI-assisted rules
+## 0.4 — Optional assisted rule authoring
 
-Explore optional generation and explanation of quality rules from metadata and sample data. AI features will remain opt-in and must produce reviewable deterministic rules before execution.
+Explore optional generation and explanation of quality rules from metadata and sample data. Any assisted feature must produce reviewable deterministic rules, remain opt-in, and never execute generated rules without user approval.

@@ -49,7 +49,7 @@ small{{color:#6b7280}}@media(max-width:700px){{.summary{{grid-template-columns:1
 <div class="card"><div class="value">{score:.2f}%</div><div>Score</div></div>
 </section>
 <table>
-<thead><tr><th>Rule</th><th>Column</th><th>Status</th><th>Failed rows</th><th>Sample row numbers</th></tr></thead>
+<thead><tr><th>Rule</th><th>Column</th><th>Status</th><th>Failed count</th><th>Sample row numbers</th></tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>
 </body>

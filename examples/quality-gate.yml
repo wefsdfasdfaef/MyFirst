@@ -1,0 +1,37 @@
+name: Data quality gate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/**"
+      - "quality-rules/**"
+      - ".github/workflows/data-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Open Data Quality
+        run: python -m pip install open-data-quality==0.1.1
+      - name: Validate data export
+        run: >-
+          open-data-quality data/export.csv
+          --rules quality-rules/rules.json
+          --output quality-report.json
+          --html-report quality-report.html
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-quality-reports
+          path: |
+            quality-report.json
+            quality-report.html
