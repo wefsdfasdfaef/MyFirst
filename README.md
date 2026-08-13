@@ -28,7 +28,13 @@ The current input format is CSV. Database adapters, streaming for large files, a
 
 ## Install
 
-Until the first PyPI release, install the project from source:
+After the v0.1.1 release is published to PyPI, install the pinned package:
+
+```bash
+python -m pip install open-data-quality==0.1.1
+```
+
+Until then, install the project from source:
 
 ```bash
 python -m pip install -e .
@@ -87,6 +93,8 @@ open-data-quality \
 ## CI usage
 
 The repository's CI runs the test suite on Python 3.10–3.13, builds an sdist and wheel, installs the wheel into a clean virtual environment, and runs a command-line smoke test. A downstream workflow can use the same command and fail its job when the quality gate returns status `1`.
+
+For a non-confidential CSV workflow, see [the early feedback request](https://github.com/wefsdfasdfaef/open-data-quality/issues/28) for the trial steps and privacy boundary.
 
 ## Contributing and maintenance
 
