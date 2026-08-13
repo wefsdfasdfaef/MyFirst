@@ -2,11 +2,13 @@
 
 ## 0.1 — Core quality checks
 
-CSV input, required/unique/regex/range rules, JSON reports, CLI, tests and CI.
+Completed: CSV input, required/unique/regex/range rules, JSON reports, CLI, tests and CI.
 
-## 0.2 — Governance-friendly checks
+## 0.2 — Governance-friendly reporting
 
-Planned: date formats, enumerations, cross-column rules, configurable severity, richer summary metrics and HTML reports.
+Completed: HTML quality reports and environmental monitoring data governance examples.
+
+Planned: date formats, enumerations, cross-column rules, configurable severity and richer summary metrics.
 
 ## 0.3 — Data-source adapters
 
